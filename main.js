@@ -1,6 +1,6 @@
-let theme = document.getElementById("moon");
+var theme = document.getElementById("moon");
 
-theme.onclick = function () {
+theme.onclick =  function () {
   document.body.classList.toggle("dark-theme");
   if (document.body.classList.contains("dark-theme")) {
     theme.src = "public/sun.png";

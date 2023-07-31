@@ -82,6 +82,10 @@ body {
   color: var(--secondary);
 }
 
+#moon:hover {
+  cursor: pointer;
+}
+
 .ball-container {
   position: relative;
   margin: 18px 18px 18px 18px;
