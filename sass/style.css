@@ -2,12 +2,12 @@
   font-family: PP, helvetica;
 }
 
-html {
+:root {
   --primary: #fffaf1;
   --secondary: #111;
 }
 
-html[data-theme=dark] {
+.dark-theme {
   --primary: #000;
   --secondary: #fff6e5;
 }
@@ -38,56 +38,6 @@ html[data-theme=dark] {
   bottom: 0;
   width: 8px;
   border-radius: 0px 0px 10px 10px;
-}
-
-input[type=checkbox] {
-  height: 0;
-  width: 0;
-  visibility: hidden;
-}
-
-label {
-  cursor: pointer;
-  text-indent: -9999px;
-  width: 50px;
-  height: 26px;
-  background: grey;
-  float: right;
-  border-radius: 100px;
-  position: relative;
-}
-
-label:after {
-  content: "";
-  position: absolute;
-  top: 3px;
-  left: 4px;
-  width: 20px;
-  height: 19px;
-  background: #fff;
-  border-radius: 90px;
-  transition: 0.3s;
-}
-
-input:checked + label {
-  background: #110;
-}
-
-input:checked + label:after {
-  left: calc(100% - 5px);
-  transform: translateX(-100%);
-}
-
-label:active:after {
-  width: 45px;
-}
-
-html.transition,
-html.transition *,
-html.transition *:before,
-html.transition *:after {
-  transition: all 750ms !important;
-  transition-delay: 0 !important;
 }
 
 body {
@@ -132,7 +82,10 @@ body {
   color: var(--secondary);
 }
 
-@media screen and (min-width: 400px) {
+@media screen and (max-width: 600px) {
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
   .nav-container {
     left: 20px;
     width: 100vw;
