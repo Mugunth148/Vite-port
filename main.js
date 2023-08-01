@@ -1,15 +1,3 @@
-var theme = document.getElementById("moon");
-
-theme.onclick =  function () {
-  document.body.classList.toggle("dark-theme");
-  if (document.body.classList.contains("dark-theme")) {
-    theme.src = "public/sun.png";
-  } else {
-    theme.src = "public/moon.png";
-  } 
-  
-}
-// *************************dark-mode************************
 
 const progressBarContainer = document.querySelector("#progressBarContainer");
 const progressBar = document.querySelector("#progressBar");
