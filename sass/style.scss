@@ -1,9 +1,15 @@
 * {
-  font-family:  PP,helvetica;
+  font-family: helvetica;
 }
 
 // variables********
 $easing: cubic-bezier(0.8, 0.2, 0.2, 0.8);
+
+// font-face
+@font-face {
+  font-family: Valorant;
+  src: url("../public/Valorant\ Font.ttf");
+}
 
 :root {
   --primary: #fffaf1;
@@ -53,6 +59,7 @@ body {
     box-sizing: border-box;
     font-family: PP,helvetica; 
     background-color: var(--primary);
+    overflow-x: hidden;
 }
 
 // nav bar **********
@@ -65,7 +72,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: end;
-    z-index: 999;
+    z-index: 9;
 
     .nav-home {
         
@@ -370,6 +377,10 @@ body p {
         .nav-home {
             margin-left: 0px;
             margin-bottom: 20px;
+
+            a {
+              margin-left: 40px;
+            }
         }
         .nav-router {
             flex-direction: row;
@@ -398,3 +409,64 @@ body p {
     }
 }
   
+//  preloader start
+
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10;
+  display: flex;
+}
+.overlay .bar {
+  width: 16.7vw;
+  height: 100vh;
+  background-color: #1a1a1a;
+}
+
+.counter {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 60%;
+  left: 82%;
+  z-index: 15;
+  color: lightgray;
+  font-size: 10rem;
+  font-family: Valorant;
+  font-weight: 800;
+}/*# sourceMappingURL=style.css.map */
+
+@media screen and (max-width: 768px) {
+
+  body {
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .counter {
+    margin: 0;
+    left: 0%;
+    top: 0%;
+    display:flex;
+    align-items: flex-end;
+    justify-content: end;
+  }
+  .overlay {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+  }
+
+  .bar {
+    padding: 0;
+    margin: 0;
+    width: 100vh;
+    height: 100vw;
+  }
+}
+  
+// 
