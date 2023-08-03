@@ -350,6 +350,36 @@ html body {
     padding: 0px;
   }
 }
+.overview-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--primary);
+}
+.overview-container .overview-header-container {
+  height: 25%;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.overview-container .overview-header-container .overview-header {
+  font-family: Helvetica;
+  font-size: 90px;
+  color: white;
+}
+.overview-container .overview-header-container #overview-header {
+  font-family: Helvetica;
+  font-size: 90px;
+  padding-left: 25px;
+}
+.overview-container .overview-header-container hr {
+  width: 60%;
+  height: 5px;
+  background-color: black;
+}
+
 .overlay {
   position: fixed;
   top: 0;
@@ -366,7 +396,7 @@ html body {
 }
 
 .counter {
-  position: absolute;
+  position: fixed;
   height: 100%;
   width: 100%;
   top: 60%;
