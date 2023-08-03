@@ -57,9 +57,9 @@ function startLoader() {
   startLoader();
 
   gsap.to(".counter", 1.5, {
-
     delay: 2.5,
     opacity: 0,
+    
   });
 
   gsap.to(".bar", 2, {
@@ -73,6 +73,11 @@ function startLoader() {
   //  ************for .overlay is over lapping dark mode************
   gsap.to(".overlay", 2, {
     delay: 5,
+    height: 0,
+  });
+
+  gsap.to(".counter", 2, {
+    delay: 4.5,
     height: 0,
   });
   // *************************Pre loader************************
