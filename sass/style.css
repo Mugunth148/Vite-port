@@ -2,6 +2,10 @@
   font-family: helvetica;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+}
+
 @font-face {
   font-family: Valorant;
   src: url("../public/Valorant Font.ttf");
@@ -16,46 +20,14 @@
   --secondary: #fff6e5;
 }
 
-::-webkit-scrollbar {
-  display: none;
-}
-
-#progressBarContainer {
-  position: fixed;
-  z-index: 10;
-  background: var(--primary);
-}
-
-#progressBar {
-  position: absolute;
-  will-change: transform, opacity;
-  background: linear-gradient(to top, rgb(24, 232, 187), rgb(0, 217, 255), rgb(248, 66, 215));
-  transform-origin: top center;
-  transform: scale(1, 0);
-  opacity: 0;
-}
-
-#progressBarContainer,
-#progressBar {
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 8px;
-  border-radius: 0px 0px 10px 10px;
-}
-
-html {
+body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-html body {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
   font-family: helvetica;
   background-color: var(--primary);
-  overflow-x: hidden;
 }
 
 .nav-container {
@@ -96,11 +68,24 @@ html body {
   cursor: pointer;
 }
 
+.hero-content {
+  position: absolute;
+  z-index: 1;
+  top: 30%;
+  left: 20%;
+  color: var(--secondary);
+  font-family: PP, helvetica, arial, sans-serif;
+  font-size: 40px;
+  font-weight: 50;
+  width: 915px;
+  line-height: 45px;
+}
+
 .ball-container {
   position: relative;
   margin: 18px 18px 18px 18px;
-  height: 95vh;
-  width: 97vw;
+  height: 95%;
+  width: calc(100% - 36px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -147,37 +132,6 @@ html body {
   border-radius: 500px;
   animation: green 4s infinite linear;
   animation-delay: -3s;
-}
-
-.ball-cover {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  top: 30%;
-  left: 20%;
-  z-index: 1;
-  background: transparent;
-  border-radius: 20px;
-}
-.ball-cover h1 {
-  color: var(--secondary);
-  font-family: PP, helvetica, arial, sans-serif;
-  font-size: 40px;
-  font-weight: 50;
-  width: 915px;
-  line-height: 45px;
-}
-
-.ball-cover::before {
-  content: "";
-  background: var(--primary);
-  -webkit-backdrop-filter: blur(200px);
-          backdrop-filter: blur(200px);
-  position: relative;
-  width: 97vw;
-  height: 95vh;
-  z-index: 2;
-  border-radius: 20px;
 }
 
 @keyframes pink {
@@ -276,10 +230,18 @@ html body {
   }
 }
 @media screen and (max-width: 768px) {
+  .hero-content {
+    top: 20%;
+    left: 23%;
+    font-size: 35px;
+    font-weight: 25;
+    width: 280px;
+    line-height: 35px;
+  }
   .ball-container {
-    height: 100vh;
-    width: 100vw;
-    margin: 19px;
+    height: 100%;
+    width: 100%;
+    margin: 30px 18px 18px 30px;
   }
   .ball-container .pink-ball {
     width: 500px;
@@ -295,21 +257,6 @@ html body {
     width: 400px;
     height: 400px;
     border-radius: 400px;
-  }
-  .ball-cover {
-    top: 30%;
-    left: 10%;
-  }
-  .ball-cover h1 {
-    padding-left: 10px;
-    font-size: 30px;
-    width: 350px;
-    line-height: 35px;
-  }
-  .ball-cover::before {
-    margin: 0px;
-    width: 100%;
-    height: 100%;
   }
 }
 @media screen and (max-width: 768px) {
@@ -380,6 +327,11 @@ html body {
   background-color: black;
 }
 
+@media screen and (max-width: 768px) {
+  #overview-header h1 {
+    font-size: 20px;
+  }
+}
 .overlay {
   position: fixed;
   top: 0;
@@ -411,21 +363,23 @@ html body {
 @media screen and (max-width: 768px) {
   .counter {
     margin: 0;
-    left: 0%;
-    top: 0%;
+    left: -5%;
+    top: -15%;
     display: flex;
-    align-items: flex-end;
-    justify-content: end;
+    align-items: end;
+    justify-content: flex-end;
   }
   .overlay {
     margin: 0;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
   }
   .bar {
-    padding: 0;
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
     margin: 0;
-    width: 20vh;
+    width: 20%;
     height: 100vw;
   }
 }/*# sourceMappingURL=style.css.map */
