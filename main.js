@@ -1,32 +1,32 @@
 
-// const progressBarContainer = document.querySelector("#progressBarContainer");
-// const progressBar = document.querySelector("#progressBar");
-// let totalPageHeight = document.body.scrollHeight - window.innerHeight;
-// let debounceResize;
+const progressBarContainer = document.querySelector("#progressBarContainer");
+const progressBar = document.querySelector("#progressBar");
+let totalPageHeight = document.body.scrollHeight - window.innerHeight;
+let debounceResize;
 
-// window.addEventListener("scroll", () => {
-//   let newProgressHeight = window.pageYOffset / totalPageHeight;
-//   progressBar.style.transform = `scale(1,${newProgressHeight})`;
-//   progressBar.style.opacity = `${newProgressHeight}`;
-// }, {
-//   capture: true,
-//   passive: true
-// });
+window.addEventListener("scroll", () => {
+  let newProgressHeight = window.pageYOffset / totalPageHeight;
+  progressBar.style.transform = `scale(1,${newProgressHeight})`;
+  progressBar.style.opacity = `${newProgressHeight}`;
+}, {
+  capture: true,
+  passive: true
+});
 
-// window.addEventListener("resize", () => {
-//   clearTimeout(debounceResize);
-//   debounceResize = setTimeout(() => {
-//     totalPageHeight = document.body.scrollHeight - window.innerHeight;
-//   }, 250);
-// });
+window.addEventListener("resize", () => {
+  clearTimeout(debounceResize);
+  debounceResize = setTimeout(() => {
+    totalPageHeight = document.body.scrollHeight - window.innerHeight;
+  }, 250);
+});
 
-// progressBarContainer.addEventListener("click", (e) => {
-//   let newPageScroll = e.clientY / progressBarContainer.offsetHeight * totalPageHeight;
-//   window.scrollTo({
-//     top: newPageScroll,
-//     behavior: 'smooth'
-//   });
-// });
+progressBarContainer.addEventListener("click", (e) => {
+  let newPageScroll = e.clientY / progressBarContainer.offsetHeight * totalPageHeight;
+  window.scrollTo({
+    top: newPageScroll,
+    behavior: 'smooth'
+  });
+});
 
 // *************************scroll-bar************************
 
@@ -39,7 +39,7 @@ function startLoader() {
     return;
    }
 
-   currentValue += Math.floor(Math.random() * 10) + 1;
+   currentValue += Math.floor(Math.random() * 20) + 1;
 
    if(currentValue > 100) {
     currentValue = 100;
@@ -55,6 +55,8 @@ function startLoader() {
 }
 
   startLoader();
+
+  // gsap for pre loader******************************************
 
   gsap.to(".counter", 1.5, {
     delay: 2.5,
@@ -80,4 +82,18 @@ function startLoader() {
     delay: 4.5,
     height: 0,
   });
-  // *************************Pre loader************************
+  // ************************* overview ************************
+
+  const overviewHeader = document.querySelector("#overview-header");
+
+  gsap.to("overviewHeader",{
+  scrollTrigger: {
+    trigger: "overviewHeader",
+    start: "top top",
+    end: "bottom top",
+    scrub: true,
+  },
+    marginLeft: -400,
+});
+
+

@@ -9,9 +9,9 @@
   </head>
   <body>
 
-    <!-- <div id="progressBarContainer">
+    <div id="progressBarContainer">
       <div id="progressBar"></div>
-    </div> -->
+    </div>
 
     <h1 class="counter">0</h1>
     <!--  preloader counter -->
@@ -55,36 +55,43 @@
     <div class="overview-container">
       <div class="overview-header-container">
         <h1 id="overview-header">OVERVIEW</h1>  
-        <hr>
+
       </div>
-      <div class="overview">  
-        <div class="overview-content">
-          <h1>Frontend Developer</h1>
-          <p>
-            I have experience building websites and web applications using HTML, CSS, JavaScript, React, and WordPress.
-            I am skilled in building responsive, mobile-first sites using the latest frameworks and libraries.
-            I also have experience working with PHP and MySQL on the server side.
+      
+     <div class="overview-body-container">
+      <div class="overview-body-left">
+        <div class="card" id="card1">
+          <h1 class="overview-h1">Frontend Developer</h1>
+          <p class="overview-p"> 
+            I have experience building websites and web applications using
+            JavaScript,React,HTML,CSS,Bootstrap,
+            Material UI and Tailwind CSS.
           </p>
         </div>
-        <div class="overview-content">
-          <h1>UI/UX Designer</h1>
-          <p>
-            I have experience designing and prototyping websites and web applications using Figma and Adobe XD.
-            I am skilled in creating wireframes, mockups, and prototypes to communicate designs to clients and developers.
-            I also have experience creating logos and other branding materials using Adobe Illustrator.
+         <div class="card" id="card2" >
+
+          <h1 class="overview-h1">UI/UX Designer</h1>
+          <p class="overview-p">
+            I value simple content structure, clean design patterns, and
+            thoughtful interactions.
           </p>
-        </div>
-        <div class="overview-content">
-          <h1>3D Artist</h1>
-          <p>
-            I have experience creating 3D models, animations, and visual effects using Blender.
-            I am skilled in creating 3D models for use in games and animations.
-            I also have experience creating visual effects for use in videos and games.
+        </div>  
+
+       <div class="card" id="card3">
+          <h1 class="overview-h1">3D Artist</h1>
+          <p class="overview-p">
+            I have experience creating 3D models and animations using Blender.
           </p>
-        </div>
+        </div> 
+      </div>
+
+      <div class="overview-body-right">
       </div>
      </div>
+     </div>
 
+    <!-- skills -->
+    <div class="spacer"></div>
     <!-- dark mode script tag -->
 
 <script>
@@ -102,6 +109,7 @@
 </script>
     <!-- gsap -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <!-- dark mode -->
     <script type="text/javascript" src="./main.js"></script>
   </body>

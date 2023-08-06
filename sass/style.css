@@ -1,5 +1,8 @@
 * {
   font-family: helvetica;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 ::-webkit-scrollbar {
@@ -18,6 +21,31 @@
 .dark-theme {
   --primary: #000;
   --secondary: #fff6e5;
+}
+
+#progressBarContainer {
+  position: absolute;
+  z-index: 10;
+  background: transparent;
+}
+
+#progressBar {
+  position: fixed;
+  will-change: transform, opacity;
+  background: linear-gradient(to top, rgb(24, 232, 187), rgb(0, 217, 255), rgb(248, 66, 215));
+  transform-origin: top center;
+  transform: scale(1, 0);
+  opacity: 1;
+}
+
+#progressBarContainer,
+#progressBar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 8px;
+  border-radius: 0px 0px 10px 10px;
 }
 
 body {
@@ -293,43 +321,105 @@ body {
     width: 100vw;
     line-height: 35px;
   }
-  .space {
-    padding: 0px;
-  }
 }
 .overview-container {
-  height: 100vh;
+  height: 320vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
   background-color: var(--primary);
 }
 .overview-container .overview-header-container {
-  height: 25%;
+  height: 10%;
   width: 100vw;
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
-}
-.overview-container .overview-header-container .overview-header {
-  font-family: Helvetica;
-  font-size: 90px;
-  color: white;
+  position: sticky;
+  top: 0;
 }
 .overview-container .overview-header-container #overview-header {
   font-family: Helvetica;
   font-size: 90px;
-  padding-left: 25px;
+  color: var(--secondary);
+  padding: 0px 25px;
+  margin-left: 100px;
 }
-.overview-container .overview-header-container hr {
-  width: 60%;
-  height: 5px;
-  background-color: black;
+.overview-container .overview-body-container {
+  height: 300vh;
+  width: 100%;
+  display: flex;
+}
+.overview-container .overview-body-container .overview-body-left {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+.overview-container .overview-body-container .overview-body-left .card {
+  height: 600px;
+  width: 700px;
+  position: sticky;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  border-radius: 50px;
+}
+.overview-container .overview-body-container .overview-body-left .card .overview-h1 {
+  font-family: Helvetica;
+  font-size: 60px;
+  color: var(--secondary);
+  padding: 0px 25px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+.overview-container .overview-body-container .overview-body-left .card .overview-p {
+  width: 80%;
+  font-family: Helvetica;
+  font-size: 30px;
+  color: var(--secondary);
+  padding: 0px 25px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.overview-container .overview-body-container .overview-body-left #card1 {
+  top: 50px;
+  background: pink;
+}
+.overview-container .overview-body-container .overview-body-left #card2 {
+  top: 50px;
+  background: blue;
+}
+.overview-container .overview-body-container .overview-body-left #card3 {
+  top: 50px;
+  background: yellow;
+}
+.overview-container .overview-body-container .overview-body-right {
+  height: 100vh;
+  width: 50%;
+  position: sticky;
+  top: 0;
+  background: #000;
+}
+
+.spacer {
+  height: 4000px;
+  width: 100%;
 }
 
 @media screen and (max-width: 768px) {
-  #overview-header h1 {
-    font-size: 20px;
+  #overview-header {
+    margin-left: 0px;
+    font-size: 70px;
+  }
+  .overview-body-container {
+    flex-direction: column;
   }
 }
 .overlay {
@@ -351,8 +441,8 @@ body {
   position: fixed;
   height: 100%;
   width: 100%;
-  top: 60%;
-  left: 82%;
+  top: 70%;
+  left: 80%;
   z-index: 15;
   color: lightgray;
   font-size: 10rem;
